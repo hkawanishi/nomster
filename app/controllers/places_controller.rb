@@ -2,7 +2,9 @@ class PlacesController < ApplicationController
 	before_action :authenticate_user!, :only => [:new, :create]
 	def index
 		#@places = Place.all
-		@places = Place.page(params[:page])
+		#@places = Place.page(params[:page])
+		# add .order so that the hotel order will stay the same
+		@places = Place.order(:name).page params[:page]
 	end
 
 	def new
