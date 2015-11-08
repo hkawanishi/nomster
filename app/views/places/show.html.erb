@@ -4,10 +4,6 @@
 	<br/><br/>
 	<p><%= @place.description %></p>
 
-  </head>
-  	<body>
-   		<div id="map"></div>
-
 <% if @place.latitude.present? && @place.longitude.present? %>  
   	<script>
 		function initMap() {
@@ -27,7 +23,8 @@
 	  </script>
 	  <script async defer
 	        src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
-	  <div id="map"></div>
+   	<div id="map"></div>
+   		
 <% end %>
 <br />
 		<div class = "pull-right">
