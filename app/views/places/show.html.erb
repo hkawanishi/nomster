@@ -82,24 +82,49 @@
 
 <!-- photos -->
 <div class="clear"></div>
-<%= simple_form_for @photo, :url => place_photos_path(@place) do |p| %>
-	<%= p.input :picture %>
-  <%= p.input :caption %>
-  <%= p.submit "Add a Photo", :class => 'btn btn-primary' %>
-<% end %>
 
-<h1>Photos</h1>
+<!-- Modal -->
+<div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myPhotoModal">Add a Photo</h4>
+      </div>
+
+      <%= simple_form_for @photo, :url => place_photos_path(@place) do |p| %>
+      	<div class="modal-body">
+					<%= p.input :picture %>
+  				<%= p.input :caption %>
+      	</div>
+      	<div class="modal-footer">
+      		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= p.submit "Add a Photo", :class => 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-10 col-xs-offset-1">
+	<h1 class="pull-left">Photos</h1>
+	<!-- Button trigger modal -->
+	<button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myPhotoModal">
+	  Add a Photo
+	</button>
+</div>
+<div class="clear"></div>
 
 <% @place.photos.each do |photo| %>
-	<div class="booyah-box col-xs-10 col-xs-offset-1">
+	<div class="col-xs-12 col-sm-6">
 	  <div>
 	    <blockquote>
-	    	<%= image_tag photo.picture %>
+	    	<%= image_tag photo.picture, :class => "img-responsive" %>
 	      <%= photo.caption %>
 	    </blockquote>
 	  </div>
 	</div>
-<% end %>
+<% end %> 
 
 
 
