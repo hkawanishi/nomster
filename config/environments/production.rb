@@ -8,8 +8,9 @@ Nomster::Application.configure do
     :domain         => 'yourapp.heroku.com',
     :authentication => :plain,
   }
-  ActionMailer::Base.delivery_method = :smtp
   
+  ActionMailer::Base.delivery_method = :smtp
+
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.default_url_options = { :host => 'nomster-by-hiromi.herokuapp.com'}
   # Code is not reloaded between requests.
