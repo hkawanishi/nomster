@@ -64,10 +64,8 @@
 	<% if place.photos.present? %>
 		<div class="col-xs-12">
 		  <div>
-		    <blockquote>
-		    	<%= image_tag place.photos.last.picture, :class => "img-responsive" %>
-		      <%= place.photos.last.caption %>
-		    </blockquote>
+		    <%= image_tag place.photos.last.picture, :class => "img-responsive" %>
+		    <%= place.photos.last.caption %>
 		  </div>
 		</div>
 	<% end %>
