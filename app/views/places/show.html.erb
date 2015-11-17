@@ -120,14 +120,16 @@
 <% @place.photos.each do |photo| %>
 	<div class="col-xs-12 col-sm-6">
 	  <div>
-	  	<%= link_to image_tag(photo.picture, :class=> "img-responsive"), '#pic', :class=> "fancybox" %>
-	    <!--%= image_tag photo.picture, :class => "img-responsive" %-->
+	  	<!-- remove fancybox attempt.  will get back this later. -->
+	  	<!--%= link_to image_tag(photo.picture, :class=> "img-responsive"), '#pic', :class=> "fancybox" %-->
+	    <%= image_tag photo.picture, :class => "img-responsive" %>
 	    <%= photo.caption %>
-	    <div style="display:none;">
+	    <!-- remove fancybox portion -->
+	    <!--div style="display:none;">
 				<div id="pic">
 	  			<%= image_tag photo.picture, :class => "img-responsive" %>
 				</div>
-			</div>
+			</div-->
 	  </div>
 	  <!-- add the following lines for fancybox -->
 		
