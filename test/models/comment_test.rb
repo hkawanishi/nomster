@@ -28,4 +28,5 @@ class CommentTest < ActiveSupport::TestCase
   	actual = rating5
   	assert_equal expected, actual
   end
+
 end

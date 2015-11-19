@@ -8,12 +8,10 @@
   	<script>
 		function initMap() {
 		  var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
-
 		  var map = new google.maps.Map(document.getElementById('map'), {
 		    zoom: 12,
 		    center: myLatLng
 		  });
-
 		  var marker = new google.maps.Marker({
 		    position: myLatLng,
 		    map: map,
@@ -116,31 +114,12 @@
 	</button>
 </div>
 <div class="clear"></div>
-<br /><br />
+
 <% @place.photos.each do |photo| %>
 	<div class="col-xs-12 col-sm-6">
 	  <div>
-	  	<!-- remove fancybox attempt.  will get back this later. -->
-	  	<!--%= link_to image_tag(photo.picture, :class=> "img-responsive"), '#pic', :class=> "fancybox" %-->
-	    <%= image_tag photo.picture, :class => "img-responsive" %>
-	    <%= photo.caption %>
-	    <!-- remove fancybox portion -->
-	    <!--div style="display:none;">
-				<div id="pic">
-	  			<%= image_tag photo.picture, :class => "img-responsive" %>
-				</div>
-			</div-->
+	    	<%= image_tag photo.picture, :class => "img-responsive" %>
+	      <%= photo.caption %>
 	  </div>
-	  <!-- add the following lines for fancybox -->
-		
-	  <!--fancybox-->
 	</div>
 <% end %> 
-
-
-
-
-
-
-
-

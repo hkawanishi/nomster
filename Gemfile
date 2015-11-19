@@ -55,7 +55,9 @@ gem 'carrierwave'
 2
 gem "fog", "~> 1.3.1"
 
-gem 'fancybox2-rails'
+#gem 'fancybox2-rails'
+
+gem "factory_girl_rails", "~> 4.0" 
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
